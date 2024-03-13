@@ -22,7 +22,7 @@ install_monitoring () {
   echo "### Please Enter the vote account pubkey: "
   read VOTE_ACCOUNT_PUBKEY
   echo "### Please Enter ledger dir: "
-  read LEDGER_DIR
+  read LEDGER_PATH
 
   read -e -p "### Please tell which user is running validator: " SOLANA_USER
   cd
@@ -64,7 +64,7 @@ install_monitoring () {
   'solana_user': '$SOLANA_USER', \
   'validator_name':'$VALIDATOR_NAME', \
   'vote_account_pubkey': '$VOTE_ACCOUNT_PUBKEY' \
-  'ledger_dir': '$LEDGER_DIR' \
+  'ledger_path': '$LEDGER_PATH' \
   }"
 
   ansible-playbook --connection=local --inventory ./inventory/$inventory --limit localhost  playbooks/pb_install_monitoring.yaml --extra-vars "@/etc/sv_manager/sv_manager.conf"
@@ -88,7 +88,7 @@ install_monitoring () {
 echo Do you want to install monitoring?
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) install_monitoring "${1:-v1.0.3}"; break;;
+        Yes ) install_monitoring "${1:-v1.0.4}"; break;;
         No ) echo "### Aborting install. No changes are made on the system."; exit;;
     esac
 done

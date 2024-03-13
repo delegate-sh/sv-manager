@@ -19,4 +19,5 @@
 "upload_validator_keys": "{{ hostvars[inventory_hostname]["upload_validator_keys"] }}",
 "validator_homepage": "{{ hostvars[inventory_hostname]["validator_homepage"] }}",
 "validator_name": "{{ hostvars[inventory_hostname]["validator_name"] }}"
+"vote_account_pubkey": "{{ hostvars[inventory_hostname]["vote_account_pubkey"] }}"
 }

@@ -2,8 +2,8 @@ from common import ValidatorConfig
 
 config = ValidatorConfig(
     validator_name="{{ validator_name }}",
-    ledger_dir="{{ ledger_dir }}",
-    vote_account_pubkey="{{ ledger_dir }}"
+    ledger_path="{{ ledger_path }}",
+    vote_account_pubkey="{{ vote_account_pubkey }}"
     local_rpc_address="http://localhost:8899",
     remote_rpc_address="{{ cluster_rpc_address }}",
     cluster_environment="{{ cluster_environment }}",
