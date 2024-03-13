@@ -7,13 +7,15 @@ import time
 class ValidatorConfig:
     def __init__(self,
                  validator_name: str,
-                 secrets_path: str,
+                 ledger_dir: str,
+                 vote_account_pubkey: str,
                  local_rpc_address: str,
                  remote_rpc_address: str,
                  cluster_environment: str,
                  debug_mode: bool):
         self.validator_name = validator_name
-        self.secrets_path = secrets_path
+        self.ledger_dir = ledger_dir
+        self.vote_account_pubkey = vote_account_pubkey
         self.local_rpc_address = local_rpc_address
         self.remote_rpc_address = remote_rpc_address
         self.cluster_environment = cluster_environment
