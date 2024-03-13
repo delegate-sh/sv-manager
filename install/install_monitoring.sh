@@ -54,11 +54,13 @@ install_monitoring () {
   echo "### Unpack Solana validator manager ###"
   unzip ./sv_manager.zip -d .
 
+  echo "### Unpack Solana validator manager ###"
   mv sv-manager* sv_manager
   rm ./sv_manager.zip
   cd ./sv_manager || exit
   cp -r ./inventory_example ./inventory
 
+  echo "### Create sv config ###"
   #echo $(pwd)
   ansible-playbook --connection=local --inventory ./inventory/$inventory --limit localhost  playbooks/pb_config.yaml --extra-vars "{ \
   'solana_user': '$SOLANA_USER', \
@@ -88,7 +90,7 @@ install_monitoring () {
 echo Do you want to install monitoring?
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) install_monitoring "${1:-v1.0.4}"; break;;
+        Yes ) install_monitoring "${1:-v1.0.5}"; break;;
         No ) echo "### Aborting install. No changes are made on the system."; exit;;
     esac
 done
