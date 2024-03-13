@@ -65,7 +65,7 @@ install_monitoring () {
   ansible-playbook --connection=local --inventory ./inventory/$inventory --limit localhost  playbooks/pb_config.yaml --extra-vars "{ \
   'solana_user': '$SOLANA_USER', \
   'validator_name':'$VALIDATOR_NAME', \
-  'vote_account_pubkey': '$VOTE_ACCOUNT_PUBKEY' \
+  'vote_account_pubkey': '$VOTE_ACCOUNT_PUBKEY', \
   'ledger_path': '$LEDGER_PATH' \
   }"
 
@@ -90,7 +90,7 @@ install_monitoring () {
 echo Do you want to install monitoring?
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) install_monitoring "${1:-v1.0.5}"; break;;
+        Yes ) install_monitoring "${1:-v1.0.6}"; break;;
         No ) echo "### Aborting install. No changes are made on the system."; exit;;
     esac
 done
