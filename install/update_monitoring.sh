@@ -25,7 +25,7 @@ update_monitoring() {
   $pkg_manager install ansible curl unzip --yes
 
   echo "### Download Solana validator manager"
-  cmd="https://github.com/mfactory-lab/sv-manager/archive/refs/tags/$1.zip"
+  cmd="https://github.com/delegate-sh/sv-manager/archive/refs/tags/$1.zip"
   echo "starting $cmd"
   curl -fsSL "$cmd" --output sv_manager.zip
   echo "### Unpack Solana validator manager ###"
@@ -51,5 +51,5 @@ done
 else
 echo '### Monitoring is not installed, or the version is too old. ###'
 echo '### Please run full install of the latest version using this command: ###'
-echo '### /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mfactory-lab/sv-manager/latest/install/install_monitoring.sh)" ###'
+echo '### /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/delegate-sh/sv-manager/latest/install/install_monitoring.sh)" ###'
 fi

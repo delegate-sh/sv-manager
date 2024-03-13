@@ -19,14 +19,8 @@ install_monitoring () {
 
   echo "### Please type your validator name: "
   read VALIDATOR_NAME
-  echo "### Please type the full path to your validator keys: "
-  read PATH_TO_VALIDATOR_KEYS
-
-  if [ ! -f "$PATH_TO_VALIDATOR_KEYS/validator-keypair.json" ]
-  then
-    echo "key $PATH_TO_VALIDATOR_KEYS/validator-keypair.json not found. Pleas verify and run the script again"
-    exit
-  fi
+  echo "### Please Enter the vote account pubkey: "
+  read VOTE_ACCOUNT_PUBKEY
 
   read -e -p "### Please tell which user is running validator: " SOLANA_USER
   cd
@@ -52,7 +46,7 @@ install_monitoring () {
   ansible-galaxy collection install community.general
 
   echo "### Download Solana validator manager"
-  cmd="https://github.com/mfactory-lab/sv-manager/archive/refs/tags/$1.zip"
+  cmd="https://github.com/delegate-sh/sv-manager/archive/refs/tags/$1.zip"
   echo "starting $cmd"
   curl -fsSL "$cmd" --output sv_manager.zip
   echo "### Unpack Solana validator manager ###"
@@ -67,7 +61,7 @@ install_monitoring () {
   ansible-playbook --connection=local --inventory ./inventory/$inventory --limit localhost  playbooks/pb_config.yaml --extra-vars "{ \
   'solana_user': '$SOLANA_USER', \
   'validator_name':'$VALIDATOR_NAME', \
-  'local_secrets_path': '$PATH_TO_VALIDATOR_KEYS' \
+  'vote_account_pubkey': '$VOTE_ACCOUNT_PUBKEY' \
   }"
 
   ansible-playbook --connection=local --inventory ./inventory/$inventory --limit localhost  playbooks/pb_install_monitoring.yaml --extra-vars "@/etc/sv_manager/sv_manager.conf"
