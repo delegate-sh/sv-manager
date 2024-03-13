@@ -7,8 +7,9 @@
     mode: '0755'
 
 - name: Check if config file exists
-  stat:
+  file:
     path: /etc/sv_manager/sv_manager.conf
+    state: file
   register: config_exists
 
 - name: Load config file

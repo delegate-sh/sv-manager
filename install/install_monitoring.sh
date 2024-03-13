@@ -90,7 +90,7 @@ install_monitoring () {
 echo Do you want to install monitoring?
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) install_monitoring "${1:-v1.0.6}"; break;;
+        Yes ) install_monitoring "${1:-v1.0.7}"; break;;
         No ) echo "### Aborting install. No changes are made on the system."; exit;;
     esac
 done
