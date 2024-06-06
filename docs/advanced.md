@@ -182,7 +182,7 @@ ansible-playbook pb_install_monitoring.yaml  -v
 
 From server command line, user root, paste the whole command and run it:
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mfactory-lab/sv-manager/latest/install/install_monitoring.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/delegate-sh/sv-manager/latest/install/install_monitoring.sh)"
 
 ### Migrate your current setup to supported by sv-manager
 
