@@ -100,5 +100,5 @@ done
 else
 echo '### Validator is not installed, or the version is too old. ###'
 echo '### Please run full install of the latest version using this command: ###'
-echo '### /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mfactory-lab/sv-manager/latest/install/install_monitoring.sh)" ###'
+echo '### /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/delegate-sh/sv-manager/latest/install/install_monitoring.sh)" ###'
 fi

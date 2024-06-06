@@ -40,7 +40,7 @@ Please use them, enjoy them, and improve them.
 * Run this command…
 
 ````shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mfactory-lab/sv-manager/latest/install/install_validator.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/delegate-sh/sv-manager/latest/install/install_validator.sh)"
 ````
   <img src="docs/launch.gif" width=500>
 …and follow the wizard’s instructions (__enter your own Node name!__):
@@ -52,13 +52,13 @@ That's it, you are all set!
 ### How to update validator
 
 ````shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mfactory-lab/sv-manager/latest/install/update_test_validator_version.sh)" --version 1.14.2
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/delegate-sh/sv-manager/latest/install/update_test_validator_version.sh)" --version 1.14.2
 ````
 
 ### how to update monitoring
 
 ````shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mfactory-lab/sv-manager/latest/install/update_monitoring.sh)" 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/delegate-sh/sv-manager/latest/install/update_monitoring.sh)" 
 ````
 
 
