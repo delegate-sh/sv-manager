@@ -44,8 +44,8 @@ install_monitoring () {
   # fix for eventually hanging of pip
   export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
-  ansible-galaxy collection install ansible.posix
-  ansible-galaxy collection install community.general
+  #ansible-galaxy collection install ansible.posix
+  #ansible-galaxy collection install community.general
 
   echo "### Download Solana validator manager"
   cmd="https://github.com/delegate-sh/sv-manager/archive/refs/tags/$1.zip"
